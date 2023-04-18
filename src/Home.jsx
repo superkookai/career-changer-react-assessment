@@ -1,4 +1,7 @@
+import { useState } from "react"
 import Layout from "./Layout"
+import Admin from "./Admin";
+import User from "./User";
 
 
 const mockEmployees = [
@@ -23,12 +26,41 @@ const mockEmployees = [
 ]
 
 const Home = () => {
+  const [employees,setEmployees] = useState([]);
+  const [sector,setSector] = useState("");
+  
+  if (sector === 'admin') {
+    return (
+      <Layout>
+        <h1>Generation Thailand</h1>
+        <h1>Home - Admin Sector</h1>
+        <button onClick={()=>setSector('user')}>User Home Sector</button>
+        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
+        <Admin/>
+      </Layout>
+    )
 
-  return (
-    <Layout>
-      <h1>Home</h1>
-    </Layout>
-  )
+  }else if (sector === 'user') {
+    return (
+      <Layout>
+        <h1>Generation Thailand</h1>
+        <h1>Home - User Sector</h1>
+        <button onClick={()=>setSector('user')}>User Home Sector</button>
+        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
+        <User/>
+      </Layout>
+    )
+  }else{
+    return (
+      <Layout>
+        <h1>Generation Thailand</h1>
+        <h1>React Assessment</h1>
+        <button onClick={()=>setSector('user')}>User Home Sector</button>
+        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
+      </Layout>
+    )
+  }
+
 }
 
 
