@@ -1,3 +1,6 @@
+import Layout from "./Layout"
+
+
 const mockEmployees = [
   {
     id: 0,
@@ -22,9 +25,9 @@ const mockEmployees = [
 const Home = () => {
 
   return (
-    <div>
-
-    </div>
+    <Layout></Layout>
+      <h1>Home</h1>
+    </Layout>
   )
 }
 
