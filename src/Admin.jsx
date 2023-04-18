@@ -1,11 +1,29 @@
+import { useState } from "react"
+
 export default function Admin({employees,setEmployees}){
+
+    const [name,setName] = useState('');
+    const [lastname,setLastname] = useState('');
+    const [position,setPosition] = useState('');
+
+    const addEmployee = (e)=>{
+        e.preventDefault();
+        const newEmployee = {
+            id: Math.floor(Math.random()*100),
+            name: name,
+            lastname: lastname,
+            position: position
+        }
+        setEmployees([...employees,newEmployee]);
+    }
+
     return (
         <>
             <h3>Create User Here</h3>
-            <form>
-                <input type="text" placeholder="Name" required/>
-                <input type="text" placeholder="Last Name" required/>
-                <input type="text" placeholder="Position" required/>
+            <form onSubmit={addEmployee}>
+                <input type="text" placeholder="Name" required value={name} onChange={(e)=>setName(e.target.value)}/>
+                <input type="text" placeholder="Last Name" required value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
+                <input type="text" placeholder="Position" required value={position} onChange={(e)=>setPosition(e.target.value)}/>
                 <button type="submit">Save</button>
             </form>
             <table>
