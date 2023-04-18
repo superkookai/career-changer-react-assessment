@@ -1,9 +1,9 @@
 export default function NavBar(){
     return (
-        <div>
-            <ul>
-                <li><a href={'/'}>Home</a></li>
-                <li><a href={'/Owner'}>Owner</a></li>
+        <div className="container bg-dark rounded">
+            <ul className="nav justify-content-end">
+                <li className="nav-item"><a className="nav-link text-white" href={'/'}>Home</a></li>
+                <li className="nav-item"><a className="nav-link text-white" href={'/Owner'}>Owner</a></li>
             </ul>
         </div>
     )
