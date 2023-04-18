@@ -7,21 +7,21 @@ import User from "./User";
 const mockEmployees = [
   {
     id: 0,
-    name: "mock",
-    lastname: 'mocklastname',
-    position: "Manager"
+    name: "John",
+    lastname: 'Smith',
+    position: "Project Manager"
   },
   {
     id: 1,
-    name: "employee 1",
-    lastname: "em",
-    position: "Engineer"
+    name: "Annabel",
+    lastname: "Washington",
+    position: "Software Engineer"
   },
   {
     id: 2,
-    name: "employee 2",
-    lastname: "lord",
-    position: "Designer"
+    name: "Citra",
+    lastname: "Young",
+    position: "UX/UI Designer"
   },
 ]
 
