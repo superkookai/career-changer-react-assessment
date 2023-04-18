@@ -34,7 +34,7 @@ export default function Admin({employees,setEmployees}){
                     <th>Action</th>
                 </tr>
                 {
-                    employees.map((employee) =>{
+                    employees.length > 0 && employees.map((employee) =>{
                         return (
                             <tr>
                                 <td>{employee.name}</td>
