@@ -20,7 +20,10 @@ export default function Admin(props){
     }
 
     const deleteEmployee = (id)=>{
-        
+        const result = employees.filter((employee)=>{
+            return employee.id !== id;
+        });
+        setEmployees(result);
     }
 
     return (
@@ -42,7 +45,7 @@ export default function Admin(props){
                 {
                     employees.length > 0 && employees.map((employee) =>{
                         return (
-                            <tr>
+                            <tr key={employee.id}>
                                 <td>{employee.name}</td>
                                 <td>{employee.lastname}</td>
                                 <td>{employee.position}</td>

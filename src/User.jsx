@@ -9,7 +9,7 @@ export default function User({employees}){
             {
                 employees.map((employee)=>{
                     return (
-                        <tr>
+                        <tr key={employee.id}>
                             <td>{employee.name}</td>
                             <td>{employee.lastname}</td>
                             <td>{employee.position}</td>
