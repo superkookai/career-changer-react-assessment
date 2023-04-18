@@ -31,12 +31,12 @@ export default function Admin(props){
 
     return (
         <div className="container text-center">
-            <h3>Create User Here</h3>
-            <form>
-                <input type="text" placeholder="Name" required value={name} onChange={(e)=>setName(e.target.value)}/>
-                <input type="text" placeholder="Last Name" required value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
-                <input type="text" placeholder="Position" required value={position} onChange={(e)=>setPosition(e.target.value)}/>
-                <button onClick={addEmployee}>Save</button>
+            <h3 className="text-start">Create User Here</h3>
+            <form className="d-flex">
+                <input type="text" placeholder="Name" required value={name} onChange={(e)=>setName(e.target.value)} className="form-control"/>
+                <input type="text" placeholder="Last Name" required value={lastname} onChange={(e)=>setLastname(e.target.value)}className="form-control"/>
+                <input type="text" placeholder="Position" required value={position} onChange={(e)=>setPosition(e.target.value)}className="form-control"/>
+                <button onClick={addEmployee} className="btn btn-primary">Save</button>
             </form>
             <table className="table table-bordered table-hover mt-5">
                 <thead className="table-primary">
