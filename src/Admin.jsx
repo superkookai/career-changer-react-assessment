@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export default function Admin({employees,setEmployees}){
+export default function Admin(props){
+
+    const {employees,setEmployees} = props;
 
     const [name,setName] = useState('');
     const [lastname,setLastname] = useState('');
@@ -17,14 +19,18 @@ export default function Admin({employees,setEmployees}){
         setEmployees([...employees,newEmployee]);
     }
 
+    const deleteEmployee = (id)=>{
+        
+    }
+
     return (
         <>
             <h3>Create User Here</h3>
-            <form onSubmit={addEmployee}>
+            <form>
                 <input type="text" placeholder="Name" required value={name} onChange={(e)=>setName(e.target.value)}/>
                 <input type="text" placeholder="Last Name" required value={lastname} onChange={(e)=>setLastname(e.target.value)}/>
                 <input type="text" placeholder="Position" required value={position} onChange={(e)=>setPosition(e.target.value)}/>
-                <button type="submit">Save</button>
+                <button onClick={addEmployee}>Save</button>
             </form>
             <table>
                 <tr>
@@ -40,7 +46,7 @@ export default function Admin({employees,setEmployees}){
                                 <td>{employee.name}</td>
                                 <td>{employee.lastname}</td>
                                 <td>{employee.position}</td>
-                                <td><button>Delete</button></td>
+                                <td><button onClick={()=>deleteEmployee(employee.id)}>Delete</button></td>
                             </tr>
                         )
                     })

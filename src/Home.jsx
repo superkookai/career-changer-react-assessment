@@ -26,12 +26,9 @@ const mockEmployees = [
 ]
 
 const Home = () => {
-  const [employees,setEmployees] = useState([]);
+  const [employees,setEmployees] = useState(mockEmployees);
   const [sector,setSector] = useState("");
-
-  useEffect(()=>{
-    setEmployees(mockEmployees);
-  });
+  
   
   if (sector === 'admin') {
     return (
@@ -40,7 +37,7 @@ const Home = () => {
         <h1>Home - Admin Sector</h1>
         <button onClick={()=>setSector('user')}>User Home Sector</button>
         <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
-        <Admin employees={employees} setEmployees={setEmployees}/>
+        <Admin employees={employees} setEmployees={setEmployees} />
       </Layout>
     )
 
