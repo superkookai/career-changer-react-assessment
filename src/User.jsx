@@ -1,11 +1,14 @@
 export default function User({employees}){
     return (
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Last Name</th>
-                <th>Position</th>
-            </tr>
+        <table className="table table-bordered table-hover">
+            <thead className="table-primary">
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            <tbody className="table-light text-start">
             {
                 employees.map((employee)=>{
                     return (
@@ -17,6 +20,7 @@ export default function User({employees}){
                     )
                 })
             }
+            </tbody>
         </table>
     )
 }
