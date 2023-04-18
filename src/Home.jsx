@@ -33,31 +33,37 @@ const Home = () => {
   if (sector === 'admin') {
     return (
       <Layout>
-        <h1>Generation Thailand</h1>
-        <h1>Home - Admin Sector</h1>
-        <button onClick={()=>setSector('user')}>User Home Sector</button>
-        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
-        <Admin employees={employees} setEmployees={setEmployees} />
+        <div className="container mt-5 text-center">
+          <h1>Generation Thailand</h1>
+          <h1>Home - Admin Sector</h1>
+          <button onClick={()=>setSector('user')} className="my-5 mx-5 btn btn-primary btn-lg">User Home Sector</button>
+          <button onClick={()=>setSector('admin')} className="my-5 mx-5 btn btn-success btn-lg">Admin Home Sector</button>
+          <Admin employees={employees} setEmployees={setEmployees} />
+        </div>
       </Layout>
     )
 
   }else if (sector === 'user') {
     return (
       <Layout>
-        <h1>Generation Thailand</h1>
-        <h1>Home - User Sector</h1>
-        <button onClick={()=>setSector('user')}>User Home Sector</button>
-        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
-        <User employees={employees}/>
+        <div className="container mt-5 text-center">
+          <h1>Generation Thailand</h1>
+          <h1>Home - User Sector</h1>
+          <button onClick={()=>setSector('user')} className="my-5 mx-5 btn btn-primary btn-lg">User Home Sector</button>
+          <button onClick={()=>setSector('admin')} className="my-5 mx-5 btn btn-success btn-lg">Admin Home Sector</button>
+          <User employees={employees}/>
+        </div>
       </Layout>
     )
   }else{
     return (
       <Layout>
-        <h1>Generation Thailand</h1>
-        <h1>React Assessment</h1>
-        <button onClick={()=>setSector('user')}>User Home Sector</button>
-        <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
+        <div className="container mt-5 text-center">
+          <h1>Generation Thailand</h1>
+          <h1>React Assessment</h1>
+          <button onClick={()=>setSector('user')} className="my-5 mx-5 btn btn-primary btn-lg">User Home Sector</button>
+          <button onClick={()=>setSector('admin')} className="my-5 mx-5 btn btn-success btn-lg">Admin Home Sector</button>
+        </div>
       </Layout>
     )
   }
