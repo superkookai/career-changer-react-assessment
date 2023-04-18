@@ -25,7 +25,7 @@ const mockEmployees = [
 const Home = () => {
 
   return (
-    <Layout></Layout>
+    <Layout>
       <h1>Home</h1>
     </Layout>
   )
