@@ -1,7 +1,22 @@
-export default function User(){
+export default function User({employees}){
     return (
-        <>
-            <h1>User</h1>
-        </>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Position</th>
+            </tr>
+            {
+                employees.map((employee)=>{
+                    return (
+                        <tr>
+                            <td>{employee.name}</td>
+                            <td>{employee.lastname}</td>
+                            <td>{employee.position}</td>
+                        </tr>
+                    )
+                })
+            }
+        </table>
     )
 }

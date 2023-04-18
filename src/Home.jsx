@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Layout from "./Layout"
 import Admin from "./Admin";
 import User from "./User";
@@ -28,6 +28,10 @@ const mockEmployees = [
 const Home = () => {
   const [employees,setEmployees] = useState([]);
   const [sector,setSector] = useState("");
+
+  useEffect(()=>{
+    setEmployees(mockEmployees);
+  });
   
   if (sector === 'admin') {
     return (
@@ -47,7 +51,7 @@ const Home = () => {
         <h1>Home - User Sector</h1>
         <button onClick={()=>setSector('user')}>User Home Sector</button>
         <button onClick={()=>setSector('admin')}>Admin Home Sector</button>
-        <User/>
+        <User employees={employees}/>
       </Layout>
     )
   }else{
