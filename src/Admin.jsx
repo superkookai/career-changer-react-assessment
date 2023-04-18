@@ -17,6 +17,9 @@ export default function Admin(props){
             position: position
         }
         setEmployees([...employees,newEmployee]);
+        setName('');
+        setLastname('');
+        setPosition('');
     }
 
     const deleteEmployee = (id)=>{
@@ -27,7 +30,7 @@ export default function Admin(props){
     }
 
     return (
-        <>
+        <div className="container text-center">
             <h3>Create User Here</h3>
             <form>
                 <input type="text" placeholder="Name" required value={name} onChange={(e)=>setName(e.target.value)}/>
@@ -35,13 +38,16 @@ export default function Admin(props){
                 <input type="text" placeholder="Position" required value={position} onChange={(e)=>setPosition(e.target.value)}/>
                 <button onClick={addEmployee}>Save</button>
             </form>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Last Name</th>
-                    <th>Position</th>
-                    <th>Action</th>
-                </tr>
+            <table className="table table-bordered table-hover mt-5">
+                <thead className="table-primary">
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Position</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody className="table-light text-start">
                 {
                     employees.length > 0 && employees.map((employee) =>{
                         return (
@@ -49,12 +55,15 @@ export default function Admin(props){
                                 <td>{employee.name}</td>
                                 <td>{employee.lastname}</td>
                                 <td>{employee.position}</td>
-                                <td><button onClick={()=>deleteEmployee(employee.id)}>Delete</button></td>
+                                <td className="text-center">
+                                    <button onClick={()=>deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
+                                </td>
                             </tr>
                         )
                     })
                 }
+                </tbody>
             </table>
-        </>
+        </div>
     )
 }
